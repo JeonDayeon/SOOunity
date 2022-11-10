@@ -15,6 +15,8 @@ public class EventManager : MonoBehaviour
 
     public GameManager theGame;
 
+    public GameObject Glight;
+
     //questmanager 변수 관리-----------------------
     QuestManager questManager;
     int SetQuestId;
@@ -47,8 +49,13 @@ public class EventManager : MonoBehaviour
             EndEvent();
             return null;
         }
+
         else
         {
+            if (EventIndex == 2)
+            {
+                Glight.SetActive(true);
+            }
             return ((string)text[EventIndex]["Content"]);
         }
 
@@ -64,6 +71,7 @@ public class EventManager : MonoBehaviour
         if(id == 1)
         {
             questManager.questId = 10;
+            Glight.SetActive(false);
         }
     }
 

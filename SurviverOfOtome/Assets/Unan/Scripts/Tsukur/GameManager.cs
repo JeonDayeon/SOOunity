@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     //QuestUI------------------------------------
     public Text QuestName;
     public string Qname;
-
+    public Text[] QuestListText;
     //Object interactiron----------------------------------
     public InteractionManager interactionmanager;
 
@@ -49,14 +49,18 @@ public class GameManager : MonoBehaviour
             Event();
         }
 
-        Qname = questManager.CheckQuest();
-        if (questManager.CheckQuest() == null)
+        if (questManager.questId != 0)
         {
-            QuestName.text = null;
+            Qname = questManager.CheckQuest();
+            QuestName.text = Qname;
+            for (int i = 0; i < 2; i++)
+            {
+                QuestListText[i].text = questManager.SendListQuest(i);
+            }
         }
         else
         {
-            QuestName.text = Qname;
+            QuestName.text = null;
         }
     }
 
@@ -65,7 +69,7 @@ public class GameManager : MonoBehaviour
         scanObject = scanobj;
         ObjData objData = scanobj.GetComponent<ObjData>();
         Talk(objData.id, objData.isNpc);
-        
+        questManager.SetIn(objData.id);
         DialoguePannel.SetActive(isTalk);
         portraitImg.gameObject.SetActive(isTalk);
         interactionmanager.TransObj(objData.id, isTalk);
@@ -108,6 +112,7 @@ public class GameManager : MonoBehaviour
         string eventData = eventmanager.GetEvent(Eventindex);
         EventDialoguePannel.SetActive(isEvent);
         EventText.text = eventData;
+
         //Debug.Log("¿Ã∫•∆Æ");
         //eventmanager.GetEvent();
 
