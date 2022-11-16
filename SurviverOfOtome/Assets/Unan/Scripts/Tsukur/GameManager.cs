@@ -19,25 +19,36 @@ public class GameManager : MonoBehaviour
     public int talkIndex;
 
     //Event--------------------------------------
-    public GameObject EventDialoguePannel;
+    public GameObject[] EventDialoguePannel;
+    //public Text[] EventTextArr;
     public Text EventText;
+    public int DialogueIndex;
     public int Eventindex;
     public bool isEvent;
     public EventManager eventmanager;
-
+    
     //QuestUI------------------------------------
     public Text QuestName;
     public string Qname;
     public Text[] QuestListText;
     //Object interactiron----------------------------------
     public InteractionManager interactionmanager;
-
+    //SFXManager-------------------------------------------
+    public SFXManager TheSfx;
+    public int[] sfxObjectId;
+    public bool isSfx;
+    //image------------------------------------------------
+    public GameObject eyes;
+    public SetImage Setimage;
+    public bool isImage;
+    public GameObject card;
+    public GameObject[] paper;
     void Awake()
     {
         isTalk = false;
     }
 
-    private void Start()
+    void Start()
     {
         Event();
     }
@@ -68,11 +79,14 @@ public class GameManager : MonoBehaviour
     {
         scanObject = scanobj;
         ObjData objData = scanobj.GetComponent<ObjData>();
-        Talk(objData.id, objData.isNpc);
-        questManager.SetIn(objData.id);
-        DialoguePannel.SetActive(isTalk);
-        portraitImg.gameObject.SetActive(isTalk);
-        interactionmanager.TransObj(objData.id, isTalk);
+        if (!isEvent)
+        {
+            Talk(objData.id, objData.isNpc);
+            questManager.SetIn(objData.id);
+            DialoguePannel.SetActive(isTalk);
+            portraitImg.gameObject.SetActive(isTalk);
+            interactionmanager.TransObj(objData.id, isTalk);
+        }
     }
 
     void Talk(int id, bool isNpc)
@@ -82,12 +96,63 @@ public class GameManager : MonoBehaviour
 
         if(talkData == null)
         {
+            if(paper[1].activeSelf)
+            {
+                paper[1].SetActive(false);
+            }
             isTalk = false;
             talkIndex = 0;
             Debug.Log(questManager.CheckQuest(id));
             return;
         }
-        
+        if(id == 9000)
+        {
+            if(talkIndex == 1)
+            {
+                card.SetActive(true);
+            }
+            if(talkIndex == 2)
+            {
+                card.SetActive(false);
+                paper[0].SetActive(true);
+            }
+            if(talkIndex == 3)
+            {
+                paper[0].SetActive(false);
+                paper[1].SetActive(true);
+            }
+            if(talkIndex == 5)
+            {
+                paper[0].SetActive(false);
+                paper[1].SetActive(true);
+            }
+        }
+        for(int i = 0;  i < sfxObjectId.Length; i++)
+        {
+            if(sfxObjectId[i] == id )
+            {
+                if(i == 0 && talkIndex == 8)
+                {
+                    isSfx = true;
+                }
+                
+                else if(i == 1 && talkIndex == 3)
+                {
+                    eyes.SetActive(true);
+                    isSfx = true;
+                }
+
+                if(i == 1 && talkIndex == 4)
+                {
+                    eyes.SetActive(false);
+                }
+            }
+        }
+
+        if(id == 10000)
+        {
+            TheSfx.Play("´úÄÈ´úÄÈ");
+        }
         if (isNpc)
         {
             DialogueText.text = talkData.Split(':')[0];
@@ -96,6 +161,12 @@ public class GameManager : MonoBehaviour
             portraitImg.color = new Color(1, 1, 1, 1);
         }   
 
+        if(isSfx)
+        {
+            DialogueText.text = talkData.Split(':')[0];
+            TheSfx.Play(int.Parse(talkData.Split(':')[1]));
+            isSfx = false;
+        }
         else
         {
             DialogueText.text = talkData;
@@ -105,22 +176,28 @@ public class GameManager : MonoBehaviour
 
         isTalk = true;
         talkIndex++;
-    }   
+    }
 
     public void Event()
     {
         string eventData = eventmanager.GetEvent(Eventindex);
-        EventDialoguePannel.SetActive(isEvent);
+        if (eventmanager.id < 10)
+        {
+            DialogueIndex = 0;
+        }
+        else if (eventmanager.id >= 10)
+        {
+            DialogueIndex = 1;
+        }
+        EventText = EventDialoguePannel[DialogueIndex].GetComponentInChildren<Text>();
+        EventDialoguePannel[DialogueIndex].SetActive(isEvent);
         EventText.text = eventData;
-
-        //Debug.Log("ÀÌº¥Æ®");
-        //eventmanager.GetEvent();
 
         if (eventData == null)
         {
             isEvent = false;
             Eventindex = 0;
-            EventDialoguePannel.SetActive(isEvent);
+            EventDialoguePannel[DialogueIndex].SetActive(isEvent);
             return;
         }
 
@@ -128,5 +205,42 @@ public class GameManager : MonoBehaviour
         {
             Eventindex += 1;
         }
+
+        if (eventmanager.id == 10)
+        {
+            if (Eventindex == 8)
+            {
+                isImage = true;
+                nameText.text = "Á¶Áö¾È";
+            }
+
+            if (Eventindex == 11)
+            {
+                TheSfx.Play("ÄçÄç");
+            }
+            if (Eventindex == 13)
+            {
+                TheSfx.Play("´úÄÈ´úÄÈ");
+            }
+
+            else
+            {
+                Debug.Log("");
+            }
+        }
+
+        if (isImage)
+        {
+            EventText.text = eventData.Split(':')[0];
+            Setimage.GetImage(int.Parse(eventData.Split(':')[1]));
+        }
+        else
+        {
+            DialogueText.text = eventData;
+
+            portraitImg.color = new Color(1, 1, 1, 0);
+        }
+
+
     }
 }

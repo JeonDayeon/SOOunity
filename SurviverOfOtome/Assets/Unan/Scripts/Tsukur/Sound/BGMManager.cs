@@ -15,20 +15,21 @@ public class BGMManager : MonoBehaviour
 
     [SerializeField] BGM[] BGM = null;
 
-
     private AudioSource audioSource;
-
+    public DataManager data;
     public string bgmName;
     // Start is called before the first frame update
     void Start()
     {
-       audioSource = GetComponent<AudioSource>();
+        data = FindObjectOfType<DataManager>();
+        audioSource = GetComponent<AudioSource>();
         Play();
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 
     void Play()

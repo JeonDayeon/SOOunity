@@ -13,6 +13,7 @@ public class QuestObject
 [System.Serializable]
 public class isQuest
 {
+    public string Name;
     public int itemId;
     public bool isCheck;
     public bool isTrigger;
@@ -37,10 +38,14 @@ public class QuestManager : MonoBehaviour
     public GameObject[] questObject;
     Dictionary<int, QuestData> questList;
 
+    public GameManager TheGame;
+    public EventManager TheEvent;
     // Start is called before the first frame update
     void Awake()
     {
         questList = new Dictionary<int, QuestData>();
+        TheGame = FindObjectOfType<GameManager>();
+        TheEvent = FindObjectOfType<EventManager>();
         GenerateData();
     }
 
@@ -102,6 +107,12 @@ public class QuestManager : MonoBehaviour
         {
             case 10:
                 CheckObj(scanobjId, 0);
+                if(questobj[0].questOk == 3)
+                {
+                    TheEvent.id = 10;
+                    TheGame.isEvent = true;
+                    TheGame.Event();
+                }
                 break;
 
             case 20:
@@ -142,7 +153,6 @@ public class QuestManager : MonoBehaviour
         {
             if (questId == questSummarylist[i].id)
             {
-                Debug.Log(questSummarylist[i].questsummary[listindex]);
                 text = questSummarylist[i].questsummary[listindex];
             }
             else

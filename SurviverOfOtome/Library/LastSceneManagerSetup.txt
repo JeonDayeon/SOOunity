@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Tsukur/FirstMap.unity
+- path: Assets/Unan/VisualNovel/Scenes/VisualNovelScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

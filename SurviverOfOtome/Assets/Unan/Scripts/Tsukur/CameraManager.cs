@@ -18,7 +18,7 @@ public class CameraManager : MonoBehaviour
         movingObj = FindObjectOfType<MovingObjects>();
         moveSpeed = movingObj.runSpeed * 350;
         
-        DontDestroyOnLoad(this.gameObject); // 게임 오브젝트 파괴금지
+        //DontDestroyOnLoad(this.gameObject); // 게임 오브젝트 파괴금지
     }
 
     // Update is called once per frame

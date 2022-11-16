@@ -21,9 +21,15 @@ public class EventManager : MonoBehaviour
     QuestManager questManager;
     int SetQuestId;
 
+    //Load------------------------------------------
+    LoadSceneManager loadscene;
+
+    //로드씨 수치변경-------------------------------
+    test test;
     private void Awake()
     {
         questManager = FindObjectOfType<QuestManager>();
+        loadscene = FindObjectOfType<LoadSceneManager>();
         EventIndex = 0;
         GenerateData();
     }
@@ -39,6 +45,11 @@ public class EventManager : MonoBehaviour
         {
             text = CSVReader.Read("Tutorial2");
         }
+
+        else if(id == 10)
+        {
+            text = CSVReader.Read("T_Event1");
+        }
     }
     public string GetEvent(int eventindex)
     {
@@ -52,7 +63,7 @@ public class EventManager : MonoBehaviour
 
         else
         {
-            if (EventIndex == 2)
+            if (id == 1 && EventIndex == 2)
             {
                 Glight.SetActive(true);
             }
@@ -72,6 +83,11 @@ public class EventManager : MonoBehaviour
         {
             questManager.questId = 10;
             Glight.SetActive(false);
+        }
+        
+        if(id == 10)
+        {
+            loadscene.LoadScenes2(0);                                    
         }
     }
 
