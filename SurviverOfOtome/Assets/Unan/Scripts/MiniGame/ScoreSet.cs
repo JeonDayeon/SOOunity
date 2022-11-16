@@ -15,16 +15,26 @@ public class ScoreSet : MonoBehaviour
     public GameObject UI_gameEndImage;
     public List<GameObject> UI_StarList;
 
+    public GameObject yongHo;
     public bool isStart;
     public int stage;
     public StartManager TheStart;
+
+    public DataManager data;
+    public LoadSceneManager load;
     void Start()
     {
+        data = FindObjectOfType<DataManager>();
+        load = FindObjectOfType<LoadSceneManager>();
         isTime = false;  //스테이지 이미지 먼저 보시고 가실게요!
         isStart = true;
-        stage = 1;
         TimerSlider = g_Timer.GetComponent<Slider>();
         Score = 0;
+
+        if(data.M_Chapter == 1)
+        {
+            yongHo.SetActive(true);
+        }
     }
 
     void Update()
@@ -47,34 +57,66 @@ public class ScoreSet : MonoBehaviour
         if(isStart)
         {
             isStart = false;
-            TheStart.Stage(stage);
+            TheStart.Stage(data.M_Chapter);
         }
     }
 
     //gameResult
     void gameResult()
     {
+        bool isNext = false;
         InputScoreResult.text = InputScore.ToString();
         if(InputScore >= 50)
         {
             UI_StarList[0].SetActive(true);
             UI_StarList[1].SetActive(true);
             UI_StarList[2].SetActive(true);
+
+            if (data.M_Chapter == 0)
+            {
+                Debug.Log("wow");
+                data.D_TimeIndex = 16;
+            }
         }
         else if(InputScore >= 25 && InputScore < 50)
         {
             UI_StarList[0].SetActive(true);
             UI_StarList[1].SetActive(true);
+            if(data.M_Chapter == 0)
+            {
+                data.D_TimeIndex = 17;
+            }
         }
         else if(InputScore >= 10 && InputScore < 25)
         {
             UI_StarList[0].SetActive(true);
+            if (data.M_Chapter == 0)
+            {
+                data.D_TimeIndex = 18;
+            }
         }
         else
         {
             UI_StarList[0].SetActive(false);
             UI_StarList[1].SetActive(false);
             UI_StarList[2].SetActive(false);
+            if (data.M_Chapter == 0)
+            {
+                data.D_TimeIndex = 18;
+            }
+        }
+        if(data.M_Chapter == 1)
+        {
+            data.D_TimeIndex = 19;
+        }
+        isNext = true;
+        if (Input.GetMouseButtonDown(0) && isNext == true)
+        {
+            if(data.M_Chapter == 0)
+            {
+                data.M_Chapter = 1;
+            }
+            load.LoadScenes2(0);
         }
     }
 

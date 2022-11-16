@@ -1452,6 +1452,7 @@ MonoBehaviour:
   D_SFXNum: 0
   D_TimeIndex: 0
   D_LoadIndex: 0
+  M_Chapter: 0
 --- !u!4 &834775931
 Transform:
   m_ObjectHideFlags: 0
@@ -7433,7 +7434,7 @@ MonoBehaviour:
       isFadein: 0
     cycle_index: 16
     check_cycle_read: 0
-    isLoad: 0
+    isLoad: 1
     loadSceneNum: 0
   - cycle_name: "[\uBCC4 2\uAC1C\uC77C \uB54C]"
     info:
@@ -7578,7 +7579,7 @@ MonoBehaviour:
       isFadein: 0
     cycle_index: 17
     check_cycle_read: 0
-    isLoad: 0
+    isLoad: 1
     loadSceneNum: 0
   - cycle_name: "[\uBCC4 1\uAC1C, \uB610\uB294 0\uAC1C \uC77C \uB54C]"
     info:
@@ -7945,7 +7946,7 @@ MonoBehaviour:
       isFadein: 0
     cycle_index: 18
     check_cycle_read: 0
-    isLoad: 0
+    isLoad: 1
     loadSceneNum: 0
   - cycle_name: "[\uAC8C\uC784 \uB05D\uB09C \uD6C4]"
     info:
@@ -9642,9 +9643,11 @@ MonoBehaviour:
   - 81
   - 80
   - 79
+  - 78
+  - 77
   time_text: {fileID: 2115700330}
   test_1: 0
-  timei: 14
+  timei: 15
   isTime: 0
 --- !u!4 &2023161671
 Transform:

@@ -50,9 +50,13 @@ public class StartManager : MonoBehaviour
     {
         t = true;
         Arr[0] = GameStage[stage];
-        if(stage == 1)
+        if(stage == 0)
         {
             tutorial();
+        }
+        if(stage == 1)
+        {
+            picture();
         }
     }
 
