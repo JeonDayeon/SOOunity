@@ -71,10 +71,8 @@
 2022.08.16<br/>
 ![비주얼노벨](https://user-images.githubusercontent.com/95409013/211444132-8cb30a9f-98f1-4b13-b3cc-1914cd336a5b.png)
 ![비주얼노벨](https://user-images.githubusercontent.com/95409013/211444188-8a3118ef-4fcb-491e-b5d4-84ea693b17ec.png)
-
 ![쯔꾸르](https://user-images.githubusercontent.com/95409013/211443725-56b6ed12-c01e-4148-bea7-afc5bc5e68b2.png)
 ![미니게임](https://user-images.githubusercontent.com/95409013/211443907-8ef38d0f-9da7-43ba-a513-63578b003fd3.png)
-
 2022.11.17<br/>
 ---
 ## 기능 구현 영상
