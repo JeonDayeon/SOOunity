@@ -80,6 +80,8 @@
 ![쯔꾸르](https://user-images.githubusercontent.com/95409013/211443725-56b6ed12-c01e-4148-bea7-afc5bc5e68b2.png)
 ![미니게임](https://user-images.githubusercontent.com/95409013/211443907-8ef38d0f-9da7-43ba-a513-63578b003fd3.png)
 2022.11.17<br/>
+![메인화면](https://user-images.githubusercontent.com/95409013/212053649-76e1e2ae-0c65-4f74-bb75-300922330ce3.png)
+2023.01.12<br/>
 ---
 ## 기능 구현 영상
 ### Walk
