@@ -19,6 +19,38 @@
 - 캐릭터 이동시 효과음 적용
 - Script UI 일부 캔버스 배치
 - 스크립트 구현 진행 중
+
+### + 2022.10.20 작업현황
+ - 비주얼노벨 씬 및 스크립트 제작 (60% 완료)
+ - 맵 제작 완료
+ - 대화창 및 퀘스트 구현(오류가 있어 수정해야함)
+ - 일부 UI 변경
+ - 쯔꾸르 진행 중 끼임 현상 확인
+ - 미니게임 작업 진행
+ - 쯔꾸르에 라이트 추가
+ - 쯔꾸르 퀘스트 상호작용 구현
+ 
+### + 2022.11.17 작업현황
+- 퀘스트 오류 해결
+- 미니게임 완성
+- 비주얼 노벨 완성
+- 비주얼 노벨 진행 방식 변경(마우스 우측 버튼으로 진행 -> 마우스 우측 버튼 + 스페이스바)
+- 비주얼 노벨 진행 방식에 맞춰 쯔꾸르 퀘스트 키도 변경
+- SFX 구현 및 BGM 재배치
+- 게임 진행에 맞춰 GameLoad 구현
+- UI 일부 변경
+- 끼임 현상 해결X(임시 방편으로 끼일시 시작위치로 복귀 할 수 있도록 해놓음)
+
+### + 2022.11.18 작업현황
+ - 비주얼 노벨 Fade In & Out에서 오류 발생 확인
+ - 게임 진행 중에 있던 잡다한 오류 수정
+ 
+### + 2022.01.10 작업현황
+ - 일부 UI 수정 및 그래픽 소스 수정
+ - Fade in & out 오류 수정 진행 중
+ - 메인화면 UI 배치 완료
+ - Save, Load 구현 진행 중(비주얼노벨 -> 쯔꾸르 이동부분 자동저장)
+ - 메인화면 이동 
 * * *
 <br>
 
@@ -43,6 +75,13 @@
 2022.06.01<br/>
 ![image](https://user-images.githubusercontent.com/95409013/184805476-70ff440b-3376-4be8-917e-14eb26b0e36f.png)
 2022.08.16<br/>
+![비주얼노벨](https://user-images.githubusercontent.com/95409013/211444132-8cb30a9f-98f1-4b13-b3cc-1914cd336a5b.png)
+![비주얼노벨](https://user-images.githubusercontent.com/95409013/211444188-8a3118ef-4fcb-491e-b5d4-84ea693b17ec.png)
+![쯔꾸르](https://user-images.githubusercontent.com/95409013/211443725-56b6ed12-c01e-4148-bea7-afc5bc5e68b2.png)
+![미니게임](https://user-images.githubusercontent.com/95409013/211443907-8ef38d0f-9da7-43ba-a513-63578b003fd3.png)
+2022.11.17<br/>
+![메인화면](https://user-images.githubusercontent.com/95409013/212053649-76e1e2ae-0c65-4f74-bb75-300922330ce3.png)
+2023.01.12<br/>
 ---
 ## 기능 구현 영상
 ### Walk
@@ -57,3 +96,7 @@
 ### TransferMap
 ![TransferMap](https://user-images.githubusercontent.com/95409013/173213131-7a61fe7b-1e87-4695-b422-20968c0adf3d.gif)
 * * *
+
+### 2022.11.17 플레이
+
+### Save & Load
