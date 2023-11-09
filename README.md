@@ -44,13 +44,14 @@
 ### + 2022.11.18 작업현황
  - 비주얼 노벨 Fade In & Out에서 오류 발생 확인
  - 게임 진행 중에 있던 잡다한 오류 수정
- 
+
 ### + 2022.01.10 작업현황
  - 일부 UI 수정 및 그래픽 소스 수정
  - Fade in & out 오류 수정 완료
  - 메인화면 UI 배치 완료
  - Save, Load 구현 진행 중(비주얼노벨 -> 쯔꾸르 이동부분 자동저장)
- - 메인화면 이동 
+ - 메인화면 이동
+ - 프로토타입 완성
 * * *
 <br>
 
@@ -97,5 +98,5 @@
 ![TransferMap](https://user-images.githubusercontent.com/95409013/173213131-7a61fe7b-1e87-4695-b422-20968c0adf3d.gif)
 * * *
 
-### 2022.11.17 플레이
-![YouTube]([https://youtu.be/jFSULj7pQCM](https://youtu.be/jFSULj7pQCM?si=WubqNpioP9gJ3qEe)https://youtu.be/jFSULj7pQCM?si=WubqNpioP9gJ3qEe)
+### 2022.11.10 플레이
+{% include video id="jFSULj7pQCM" provider="youtube" %}
