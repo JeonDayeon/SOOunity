@@ -97,6 +97,3 @@
 ### TransferMap
 ![TransferMap](https://user-images.githubusercontent.com/95409013/173213131-7a61fe7b-1e87-4695-b422-20968c0adf3d.gif)
 * * *
-
-### 2022.11.10 플레이
-[![PlayGame](https://youtu.be/jFSULj7pQCM?si=OKXCJs2yvb7usNO7/0.jpg)](https://youtu.be/jFSULj7pQCM?si=OKXCJs2yvb7usNO7) 
