@@ -99,4 +99,4 @@
 * * *
 
 ### 2022.11.10 플레이
-{% include video id="jFSULj7pQCM" provider="youtube" %}
+[![PlayGame](https://youtu.be/jFSULj7pQCM?si=OKXCJs2yvb7usNO7/0.jpg)](https://youtu.be/jFSULj7pQCM?si=OKXCJs2yvb7usNO7) 
