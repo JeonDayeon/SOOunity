@@ -98,4 +98,4 @@
 * * *
 
 ### 2022.11.17 플레이
-![YouTube](https://youtu.be/jFSULj7pQCM)
+![YouTube]([https://youtu.be/jFSULj7pQCM](https://youtu.be/jFSULj7pQCM?si=WubqNpioP9gJ3qEe)https://youtu.be/jFSULj7pQCM?si=WubqNpioP9gJ3qEe)
